@@ -26,7 +26,6 @@ import axios from 'axios';
                     className="form-control" 
                     placeholder="First name" 
 
-                    onChange={handleChange}
 
                     />
 
@@ -39,7 +38,6 @@ import axios from 'axios';
                     type="text" 
                     className="form-control" 
                     placeholder="Last name" 
-                    onChange={handleChange}
 
                     />
                 </div>
@@ -50,7 +48,6 @@ import axios from 'axios';
                     type="tel" 
                     className="form-control" 
                     placeholder="Enter phone"
-                    onChange={handleChange}
 
 
                      />
@@ -75,7 +72,6 @@ import axios from 'axios';
                     type="email"
                      className="form-control" 
                      placeholder="Enter email"
-                     onChange={handleChange}
 
                      />
                 </div>
@@ -86,7 +82,6 @@ import axios from 'axios';
                     name="password"
                     type="password" 
                     className="form-control"
-                    onChange={handleChange}
  
                     placeholder="Enter password" />
                 </div>
@@ -94,13 +89,13 @@ import axios from 'axios';
                 <div className="form-group">
                   <select className="browser-default custom-select">
                     <option>select client </option>
-                    <option value="admin"  name="role" onChange={handleChange} >Admin</option>
-                    <option value="user" name="role" onChange={handleChange}>Uesr</option>
-                    <option value="technicin"  name="role" onChange={handleChange}>Technicien</option>
+                    <option value="admin"  name="role"  >Admin</option>
+                    <option value="user" name="role" >Uesr</option>
+                    <option value="technicin"  name="role" >Technicien</option>
                   </select>
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block" onClick={handleClick}>Sign Up</button>
+                <button type="submit" className="btn btn-primary btn-block" >Sign Up</button>
                 <p className="forgot-password text-right">
                     Already registered <a href="#">sign in?</a>
                 </p>

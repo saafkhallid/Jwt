@@ -4,6 +4,7 @@ const { v1: uuid } = require('uuid');
 
 const userSchema = new mongoose.Schema({
     first_name: {
+    
         type: String,
         required: true,
         maxlength: 50,
