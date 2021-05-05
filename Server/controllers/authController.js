@@ -6,8 +6,9 @@ const keys = require("../config/keys");
 
 
 exports.create_user = (req, res) => {
-
+    
     User.findOne({ email: req.body.email }).then(user => {
+        console.log('test')
         if (user) {
 
             return res.status(400).json({ message: "Email already exists" });
@@ -48,6 +49,9 @@ exports.create_user = (req, res) => {
         }
     });
 }
+
+
+
 
 
 exports.login_user = (req, res) => {

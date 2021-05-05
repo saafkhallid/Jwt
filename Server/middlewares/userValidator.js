@@ -1,5 +1,4 @@
 exports.userSignUpValidator = (req, res, next) => {
-
     req.check('first_name', 'Name is Required !').notEmpty();
     req.check('last_name', 'Name is Required !').notEmpty();
 

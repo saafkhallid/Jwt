@@ -1,10 +1,16 @@
-import React from 'react';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Login from "./components/login";
-import SignUp from "./components/signup";
+import React from 'react';
+
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Admin from './components/Admin';
+import User from './components/Tech';
+import Tech from './components/User';
+import SignUp from './components/signup';
+import Login from './components/login'
+
+import './App.css';
 
 function App() {
   return (<Router>
@@ -28,13 +34,18 @@ function App() {
       <div className="auth-wrapper">
         <div className="auth-inner">
           <Switch>
-            <Route exact path='/' component={Login} />
-            <Route path="/sign-in" component={Login} />
-            <Route path="/sign-up" component={SignUp} />
+
+            <Route exact path="/admin" component={Admin}/>
+            <Route exact path="/user" component={User}/>
+            <Route exact path="/tech" component={Tech}/>
+
+            <Route  excat path="/sign-in" component={Login} />     
+            <Route  excat path="/sign-up" component={SignUp} />
           </Switch>
         </div>
       </div>
-    </div></Router>
+    </div>
+    </Router>
   );
 }
 
