@@ -9,7 +9,9 @@ axios.defaults.withCredentials = true
         password:''
       }
       const [dataLogin,setDataLogin] = React.useState(initialState)
+
       const [error,setError] = React.useState('')
+
       const handelChange = (e)=>{
         const {name,value} = e.target
         setDataLogin({...dataLogin,[name]:value})
@@ -17,6 +19,7 @@ axios.defaults.withCredentials = true
       const handelSubmit= async (e)=>{
 
         e.preventDefault();
+
         try {
           const res = await axios.post('http://localhost:8000/api/signin',dataLogin,{
             withCredentials:true
@@ -27,11 +30,11 @@ axios.defaults.withCredentials = true
             if(res.data.isAuth && res.data.role === 'Tech') props.history.push('/tech')
           }
         } catch (error) {
-          error && setError(error.response.data);
+          error && console.log(error.response.data)
         }
-    
+
       }
-   
+  
     
        return (
             
@@ -39,12 +42,12 @@ axios.defaults.withCredentials = true
                 <h3>Sign In </h3>
                 <div className="form-group">
                     <label>Email address</label>
-                    <input type="email" className="form-control" placeholder="Enter email"   onChange={handelChange}  />
+                    <input type="email" className="form-control" name="email" placeholder="Enter email"   onChange={handelChange}  />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password"   onChange={handelChange} />
+                    <input type="password" className="form-control" name="password" placeholder="Enter password"   onChange={handelChange} />
                 </div>
 
                 <div className="form-group">

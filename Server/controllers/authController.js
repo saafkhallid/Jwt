@@ -59,6 +59,8 @@ exports.login_user = (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
 
+    console.log(req.body,"test")
+
     // check if user exists by email
     User.findOne({ email }).then(user => {
         if (!user) {

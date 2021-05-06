@@ -7,8 +7,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Admin from './components/Admin';
 import User from './components/Tech';
 import Tech from './components/User';
-import SignUp from './components/signup';
-import Login from './components/login'
+import SignUp from './components/Signup';
+import Login from './components/Login'
 
 import './App.css';
 
@@ -35,12 +35,14 @@ function App() {
         <div className="auth-inner">
           <Switch>
 
+            <Route excat path="/sign-in" component={Login} />  
             <Route exact path="/admin" component={Admin}/>
-            <Route exact path="/user" component={User}/>
-            <Route exact path="/tech" component={Tech}/>
+             <Route exact path="/user" component={User}/>
+            <Route exact path="/tech" component={Tech}/>   
+            <Route excat path="/sign-up" component={SignUp} />
 
-            <Route  excat path="/sign-in" component={Login} />     
-            <Route  excat path="/sign-up" component={SignUp} />
+
+
           </Switch>
         </div>
       </div>
